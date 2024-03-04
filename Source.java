@@ -45,9 +45,26 @@ public class Source {
 
         // remove by element
         strList.remove("hello"); // remove the hello at 0
-
         // remove by index
         strList.remove(0);
+        
+
+        // print, iterate by index
+        for (int i = 0; i < strList.size(); i++){
+            System.out.println(strList.get(i));
+        }
+
+        
+        int index = strList.indexOf("to all!");
+        strList.set(index, "CS 141");
+
+        // iterate by object
+        for (String str : strList){
+            System.out.println(str);
+        }
+
+        
+
 
         
     }
