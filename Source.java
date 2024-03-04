@@ -23,6 +23,27 @@ class Product{
 }
 
 public class Source {
+
+    // remove product from ArrayList by prodID
+    public static boolean removeElement(ArrayList<Product> a, int ID){
+        int indexFound = -1;
+
+        for (int i = 0; i < a.size(); i++){
+            if (a.get(i).id == ID){
+                indexFound = i;
+                break;
+            }
+        }
+
+        if (indexFound != -1){
+            a.remove(indexFound);
+            return true;
+        }
+
+        return false;
+    }
+
+
     public static void main(String[] args) {
         // this will be a table in my Database
         /*Product[] table = new Product[3];
@@ -32,38 +53,19 @@ public class Source {
         table[2] = new Product(382, "Cajun Seasoning", 16.5);*/
 
         // ArrayList of products
-        //ArrayList<Product> myProd = new ArrayList<Product>();
+        ArrayList<Product> myProd = new ArrayList<Product>();
 
+        // one way of adding
+        myProd.add(new Product(134, "Chair", 13.5));
+        myProd.add(new Product(256, "Syrup", 7.5));
+        myProd.add(new Product(382, "Cajun Seasoning", 16.5));
 
-        ArrayList<String> strList = new ArrayList<String>();
-        // add a new string to the strList ArrayList
-        strList.add("hello"); // 0
-        strList.add("world"); // 1
-        strList.add("to all!"); // 2
-        strList.add(1, "!");
-        strList.add("hello"); // 4
-
-        // remove by element
-        strList.remove("hello"); // remove the hello at 0
-        // remove by index
-        strList.remove(0);
-        
-
-        // print, iterate by index
-        for (int i = 0; i < strList.size(); i++){
-            System.out.println(strList.get(i));
-        }
+        // another way of adding
+        Product newProd = new Product(168, "Sweater", 25.0);
+        myProd.add(newProd);
 
         
-        int index = strList.indexOf("to all!");
-        strList.set(index, "CS 141");
-
-        // iterate by object
-        for (String str : strList){
-            System.out.println(str);
-        }
-
-        
+                
 
 
         
